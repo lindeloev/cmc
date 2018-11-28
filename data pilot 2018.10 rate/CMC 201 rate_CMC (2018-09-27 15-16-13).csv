@@ -1,0 +1,16 @@
+right;catch_key;catch_stim;modality_task;catch;shape;catch_score;pitch;any_auditory;rt;inducer;score;any_visual;hue;catch_rt;fixation_duration;key;phase;modality_inducer;lightness;task;timbre;flip;complexity;superblock;left;input;language;section;gender;age;demo_and_practice;id;simulation
+smooth:complex;;;visual;0;pointy;;;False;40.339;complexity;;True;neutral;;45;2;rate;visual;neutral;shape;;0;simple;;smooth:simple;keyboard;en;rate_CMC;female;22;yes;201;no
+smooth:blue;;;visual;0;pointy;;;False;8.241;hue;;True;red;;30;6;rate;visual;neutral;shape;;0;neutral;;smooth:red;keyboard;en;rate_CMC;female;22;yes;201;no
+dark:low;;;visual;0;neutral;;high;True;13.012;pitch;;True;neutral;;45;6;rate;auditory;light;lightness;neutral;0;neutral;;dark:high;keyboard;en;rate_CMC;female;22;yes;201;no
+simple:blue;;;visual;0;neutral;;;False;17.99;hue;;True;red;;45;3;rate;visual;neutral;complexity;;0;complex;;simple:red;keyboard;en;rate_CMC;female;22;yes;201;no
+red:square;;;visual;0;neutral;;neutral;True;2.314;timbre;;True;blue;;45;2;rate;auditory;neutral;hue;sine;0;neutral;;red:sine;keyboard;en;rate_CMC;female;22;yes;201;no
+dark:square;;;visual;0;neutral;;neutral;True;7.323;timbre;;True;neutral;;45;2;rate;auditory;dark;lightness;sine;0;neutral;;dark:sine;keyboard;en;rate_CMC;female;22;yes;201;no
+red:light;;;visual;0;neutral;;;False;18.966;lightness;;True;blue;;45;3;rate;visual;dark;hue;;0;neutral;;red:dark;keyboard;en;rate_CMC;female;22;yes;201;no
+smooth:light;;;visual;0;pointy;;;False;15.36;lightness;;True;neutral;;45;2;rate;visual;dark;shape;;0;neutral;;smooth:dark;keyboard;en;rate_CMC;female;22;yes;201;no
+smooth:low;;;visual;0;pointy;;high;True;2.317;pitch;;True;neutral;;45;6;rate;auditory;neutral;shape;neutral;0;neutral;;smooth:high;keyboard;en;rate_CMC;female;22;yes;201;no
+simple:light;;;visual;0;neutral;;;False;12.049;lightness;;True;neutral;;45;3;rate;visual;dark;complexity;;0;complex;;simple:dark;keyboard;en;rate_CMC;female;22;yes;201;no
+smooth:square;;;visual;0;pointy;;neutral;True;2.145;timbre;;True;neutral;;45;2;rate;auditory;neutral;shape;sine;0;neutral;;smooth:sine;keyboard;en;rate_CMC;female;22;yes;201;no
+sine:low;;;auditory;0;neutral;;low;True;15.381;pitch;;1;neutral;;45;5;rate;auditory;neutral;timbre;sine;0;neutral;;sine:high;keyboard;en;rate_CMC;female;22;yes;201;no
+simple:low;;;visual;0;neutral;;high;True;2.581;pitch;;True;neutral;;30;6;rate;auditory;neutral;complexity;neutral;0;complex;;simple:high;keyboard;en;rate_CMC;female;22;yes;201;no
+simple:square;;;visual;0;neutral;;neutral;True;3.524;timbre;;True;neutral;;45;5;rate;auditory;neutral;complexity;sine;0;complex;;simple:sine;keyboard;en;rate_CMC;female;22;yes;201;no
+red:low;;;visual;0;neutral;;high;True;3.569;pitch;;True;blue;;45;3;rate;auditory;neutral;hue;neutral;0;neutral;;red:high;keyboard;en;rate_CMC;female;22;yes;201;no
