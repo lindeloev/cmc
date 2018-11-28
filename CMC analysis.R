@@ -116,7 +116,11 @@ CMC_types = list(
 test_features = c('lightness', 'shape', 'pitch', 'timbre')
 
 # Load data and preprocess it
-R_all = readbulk::read_bulk('data pilot 2018.10 rate/', sep=';') %>%
+R_all = readbulk::read_bulk('data exp 2018.11 rate/', sep=';') %>%
+  # Remove subjects
+  filter(id != 509) %>%  # Had a 75% hearing loss
+  filter(id != 510) %>%  # Technical problems and noise in the lab
+  
   # RE-format a few things
   mutate_at(vars(task, inducer, right), as.character) %>%  # Make character, not factor
   
@@ -138,8 +142,6 @@ R_all = readbulk::read_bulk('data pilot 2018.10 rate/', sep=';') %>%
 R = R_all %>%
   # Select relevant
   filter(inducer %in% test_features, task %in% test_features) %>%
-  filter(task != 'timbre' | inducer != 'pitch') %>%  # Programming error in pilot
-  filter(task != 'shape' | inducer != 'lightness') %>%  # Programming error in pilot# For now, only work with relevant data
   
   # Mean ratings for each
   group_by(id, task, inducer, right) %>%
@@ -155,14 +157,14 @@ R = R_all %>%
 # PREPROCESS TEST DATA #
 ########################
 # Load the raw data
-D_all = readbulk::read_bulk('data pilot 2018.10 test/', sep=';')
+D_all = readbulk::read_bulk('data exp 2018.11 test/', sep=';')
 
 # Too low accuracy on catch trials
 bad_subjects_catch = D_all %>%
   filter(phase == 'exp', catch == 1) %>%
   group_by(id, task, superblock) %>%
   summarise(score = mean(score, na.rm=T)) %>%
-  filter(score < 0.75)
+  filter(score < 0.75, score > 0.25)
 
 # Too low accuracy on task trials
 bad_subjects_task = D_all %>%
@@ -181,11 +183,9 @@ D_all = D_all %>%
   anti_join(bad_subjects_catch, c('id', 'task', 'superblock')) %>%
   anti_join(bad_subjects_task, c('id', 'task', 'superblock')) %>%
   
-  # Pilot errors
-  filter(task!='lightness' | inducer!='shape') %>%
-  filter(task!='lightness' | inducer !='lightness') %>%
-  #filter(!is.na(CMC_code)) %>%
-  filter(id != 205) %>%
+  # Remove subjects
+  filter(id != 509) %>%  # Had a 75% hearing loss
+  filter(id != 510) %>%  # Technical problems and noise in the lab
   
   # Re-format a few things
   mutate_at(vars(task, inducer, CMC_code), as.character) %>%  # Make character, not factor
