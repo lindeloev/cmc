@@ -372,16 +372,20 @@ stanfit = fit_rt_exp$fit  # hack to avoid recompiling. See https://discourse.mc-
 
 
 # Handy function to test the directionality of the "congruent" terms using brms::hypothesis
-test_interactions = function(fit) {
+test_interactions = function(fit, test_that='< 0') {
   # First, make a hypothesis for each :congruent interaction
   S = data.frame(p = names(fit$fit)) %>%
-    filter(grepl('congruent', p)) %>%  # Only effects dealing with congruency
-    mutate(test = paste(gsub('b_', '', p), '< 0'))  # Create hypothesis strings
+    filter(grepl('^b_.*congruent', p)) %>%  # Only effects dealing with congruency
+    mutate(test = paste(gsub('b_', '', p), ifelse(p =='b_congruent_exp', '', '+ congruent_exp'), test_that))  # Create hypothesis strings
   
   # Now apply brms::hypothesis and print the results nicely
   hypothesis(fit, S$test)$hypothesis %>%
-    mutate(Hypothesis = gsub('CMC_name', '', Hypothesis)) %>%  # Just remove clutter
-    select(-Est.Error, -CI.Lower, -Star) %>%  # Remove uninformative info
+    mutate(
+      Hypothesis = gsub('congruent_exp|CMC_name|\\(|\\)|\\+', '', Hypothesis),
+      Estimate = round(Estimate * 1000, 1),
+      CI.Upper = round(CI.Upper*1000, 1)
+    ) %>%  # Just remove clutter
+    select(-Est.Error, -Star) %>%  # Remove uninformative info
     print(digits=3)
 }
 
@@ -424,7 +428,7 @@ fit_rating = brm(
 stanfit = fit_rating$fit  # Hack to avoid re-compiling
 
 # Test whether ratings go in the hypothesized direction
-test_interactions(fit_rating)
+test_interactions(fit_rating, test_that = '> 0')
 
 
 # For fun: would you get approximately the same estimates if you went metric rather than ordinal?
