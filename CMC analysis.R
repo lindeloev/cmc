@@ -192,7 +192,8 @@ D_all = D_all %>%
   mutate_at(vars(id, flip, fixation_duration), as.factor) %>%  # Make factor, not float
   mutate(
     CMC_name = paste(task, inducer, sep=':'),
-    CMC_type = as.character(CMC_types[CMC_name])  # Translate it to be direction-agnostic
+    CMC_type = as.character(CMC_types[CMC_name]),  # Translate it to be direction-agnostic
+    no_global = (no_global - mean(no_global))/1736  # scale+center to improve sampling. Scaled so that slope is difference from start to finish.
   )
 
 # Filter for main analysis
@@ -266,7 +267,12 @@ write.table(R_all, 'CMC_rating_all.csv', sep=',', row.names = FALSE)
 # LOOK AT THE DATA #
 ####################
 
-D = read.csv('CMC_rt_all.csv')
+# Load data and add factors suitable for inference
+D = read.csv('CMC_rt_all.csv') %>%
+  mutate(
+    fixation_duration = factor(fixation_duration),
+    CMC_name = relevel(CMC_name, 'pitch:shape')  # (post-hoc: Best represents the other RTs. Better for MCMC mixing)
+  )
 
 
 # CMC crude estimate (not weighted according to N trials)
@@ -345,14 +351,22 @@ formula_rt_exp_full = rt ~ 1 + CMC_name * congruent_exp + no_global + fixation_d
 get_prior(formula_rt_exp_full, D)
 curve(dgamma(x, 4, 7), from=0, to=3)  # Visualize the prior on mean RTs
 priors_rt_exp_full = c(set_prior('normal(0, 0.2)', class='b'),  # Only effects of a few hundred milliseconds are expected here
+                   set_prior('normal(0, 0.2)', class='sd'),  # Some individual differences, but only a few hundred ms (probably much less on congruency-terms than task terms, but singling them out is too much code when it's just regularization)
                    set_prior('gamma(4, 7)', class='Intercept'),  # Most mass between 200 ms and 1 second
-                   set_prior('normal(0, 0.0005)', coef='no_global'),  # Linear slopes larger than 0.5 seconds / 1000 trials are unlikely for this setup
-                   set_prior('normal(0, 0.1)', coef='fixation_duration45'))  # Likely a very small effect
+                   set_prior('normal(-0.1, 0.2)', coef='no_global'),  # RT decrease over time. -100 ms +/- 200ms from start to finish
+                   set_prior('normal(0, 0.1)', coef='fixation_duration75'))  # Likely a very small effect
+
 
 fit_rt_exp = brm(
   formula = formula_rt_exp_full,
   data = D,
-  warmup = 100, iter = 3000, chains = n_parallel)
+  prior = priors_rt_exp_full,
+  warmup = 100, iter = 1000, chains = n_parallel,
+  refresh = 1,  # It's very slow, so every sample counts :-)
+  save_all_pars = TRUE,  # save_all_pars for bayes_factor
+  file = 'fit_rt_exp',
+  control = list(max_treedepth = 11),
+  sample_file = 'fit_rt_exp_chains')  # Be able to inspect chains while sampling
 
 stanfit = fit_rt_exp$fit  # hack to avoid recompiling. See https://discourse.mc-stan.org/t/avoid-recompiling-the-exact-same-stan-model-with-brms/6129/14
 
