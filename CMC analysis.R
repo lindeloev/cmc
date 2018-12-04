@@ -464,8 +464,12 @@ fit_rt_rating = brm(
   formula = formula_rt_rating,
   prior = priors_rt_exp,  # We can re-use the priors
   data = D,
-  warmup = 100, iter = 600, chains=n_parallel,  # Sampling options
-  save_all_pars = TRUE)
+  warmup = 100, iter = 1000, chains = n_parallel,
+  refresh = 1,  # It's very slow, so every sample counts :-)
+  save_all_pars = TRUE,  # save_all_pars for bayes_factor
+  file = 'fit_rt_rating',
+  control = list(max_treedepth = 11),
+  sample_file = 'fit_rt_rating_chains')  # Be able to inspect chains while sampling
 
 # Testing the hypothesis using model comparison!
 # BF: larger favors rating over experimenter-defined CMCs
