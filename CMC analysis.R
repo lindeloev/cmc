@@ -417,21 +417,24 @@ R_brm = R_all %>%
   mutate_at(vars(key), ordered)
 
 # Priors to regularize it. Otherwise the sampling is terrible
-get_prior(key ~ right*congruent_exp + (1|id),
+formula_rating = key ~ right*congruent_exp + (1|id)
+get_prior(formula_rating,
           family=cumulative(link='logit'),
           data=R_brm)
 
-priors = c(set_prior('normal(0, 2)', class='b'),
+priors_rating = c(set_prior('normal(0, 2)', class='b'),
            set_prior('normal(0, 2)', class='Intercept'))
 
 # Start sampling
 fit_rating = brm(
-  key ~ right*congruent_exp + (1|id),
+  formula_rating,
   family=cumulative(link='logit'),
-  prior = priors,
+  prior = priors_rating,
   data = R_brm,
   chains=n_parallel,
-  save_all_pars = TRUE
+  save_all_pars = TRUE,
+  warmup = 100, iter = 1000,
+  file = 'fit_rating'
 )
 stanfit = fit_rating$fit  # Hack to avoid re-compiling
 
