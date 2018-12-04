@@ -392,10 +392,18 @@ test_interactions = function(fit, test_that='< 0') {
 # Actually do the test
 test_interactions(fit_rt_exp)
 
-# Visualize posterior predictive accuracy
+# MODEL FIT: Visualize posterior predictive accuracy
 D$predicted = colMeans(posterior_predict(fit_rt_exp))  # Mean prediction
+D$residual = D$rt - D$predicted
+
+# Histogram of all residuals and normal approximation
+hist(D$resid, breaks=100, freq=FALSE)
+curve(dnorm(x, mean(D$resid), sd(D$resid)), add=T)
+
+# For each subject-condition
 ggplot(D, aes(x=rt, y=predicted, color=CMC_name)) + 
-  geom_point() + 
+  #geom_point() +
+  stat_summary()
   geom_abline(slope=1, intercept=0) + 
   facet_wrap(~id, scales='free')
 
