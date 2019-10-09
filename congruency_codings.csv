@@ -1,0 +1,17 @@
+feature1,stim1,feature2,stim2,congruent_exp
+lightness,light,pitch,low,0
+lightness,light,pitch,high,1
+lightness,dark,pitch,low,1
+lightness,dark,pitch,high,0
+lightness,light,timbre,square,1
+lightness,light,timbre,sine,0
+lightness,dark,timbre,square,0
+lightness,dark,timbre,sine,1
+shape,pointy,pitch,low,0
+shape,pointy,pitch,high,1
+shape,smooth,pitch,low,1
+shape,smooth,pitch,high,0
+shape,pointy,timbre,sine,0
+shape,pointy,timbre,square,1
+shape,smooth,timbre,sine,1
+shape,smooth,timbre,square,0
