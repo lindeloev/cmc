@@ -98,11 +98,11 @@ print_table = function(tab) {
   tab %>%
     mutate(
       #CMC = sprintf('%.1f [%.1f, %.1f]', median, low, high),
-      median = round(median, 1),
-      CI = sprintf('[%.1f, %.1f]', low, high)
+      median = round(median, 2),
+      CI = sprintf('[%.2f, %.2f]', low, high)
     ) %>%
     select(name, median, CI, BF, N) %>%
-    mutate_if(is.numeric, round, digits=1)
+    mutate_if(is.numeric, round, digits=2)
 }
 
 # Now make the tables
@@ -117,7 +117,7 @@ tab_all = table_exp %>%
 tab_all
 
 # Save
-write.table(tab_all, 'tables/table_fits2.csv', sep=',', row.names = FALSE)
+write.table(tab_all, 'tables/table_fits.csv', sep=',', row.names = FALSE)
 
 
 # How much faster for preferences?

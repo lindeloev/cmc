@@ -71,8 +71,11 @@ R_all = read.csv('CMC_rating_all.csv') %>%
   # Good order so that RT-tested CMCs appear first (or last?)
   mutate(
     right = fct_rev(fct_relevel(right, 'smooth:sine', 'smooth:low', 'dark:sine', 'dark:low')),
-    left = fct_rev(fct_relevel(left, 'smooth:square', 'smooth:high', 'dark:square', 'dark:high'))
+    left = fct_rev(fct_relevel(left, 'smooth:square', 'smooth:high', 'dark:square', 'dark:high')),
+    task = recode(task, hue = "color"),
+    inducer = recode(inducer, hue = "color")
   )
+  
 
 # PREREGISTERED PLOT
 # Plot consistency. Summarising for each individual
@@ -177,8 +180,29 @@ ggplot(R_plot, aes(x=as.numeric(right), y=key, group=id)) +
   
   labs(title='Dimension Matching Task preferences', x=NULL, y='Average preference rating')
 
-ggsave('figures/CMMT Preferences.png', width=4, height=4, scale=1.5)
+ggsave('figures/DMT Preferences.png', width=4, height=4, scale=1.5)
 
+
+
+# TABLE FOR SUPPLEMENTARY
+T_DMT = R_plot %>%
+  mutate(condition = toupper(paste0(task, ":", inducer))) %>%
+  # Summarise per individual
+  group_by(id, condition, right) %>%
+  summarise(mean_rating = mean(key)) %>%
+  
+  # Total summary
+  group_by(condition, right) %>%
+  summarise(
+    rating = mean(mean_rating),
+    N = n(),
+    N_for = sum(mean_rating > 0),
+    N_against = sum(mean_rating < 0),
+    N_neutral = sum(mean_rating == 0)
+  ) %>%
+  arrange(-rating)
+
+write.csv(T_DMT, "tables/table DMT.csv", row.names = FALSE)
 
 
 ##########################################
