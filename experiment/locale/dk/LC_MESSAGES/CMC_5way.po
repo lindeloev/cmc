@@ -1,0 +1,347 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-04-04 20:21+0200\n"
+"PO-Revision-Date: 2019-04-04 20:35+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: da_DK\n"
+
+#: CMC_5way.py:138
+msgid ""
+"\n"
+"\n"
+"Press %s to continue..."
+msgstr ""
+"\n"
+"\n"
+"Tryk på %s for at fortsætte..."
+
+#: CMC_5way.py:139
+msgid ""
+" The reminder you see at the bottom will be present throughout the task. "
+"Press %(left)s or %(right)s a few times to see/hear more examples.\n"
+"\n"
+"Remember, once in a while you will see an arrow or hear a sliding chirp. Use "
+"the up-arrow and down-arrow to respond to those."
+msgstr ""
+" Påmindelsen i bunden af skærmen forbliver synlig igennem hele opgaven. Tryk "
+"på %(left)s eller %(right)s for at se/høre flere eksempler.\n"
+"\n"
+"Husk at du ind imellem vil se en pil eller høre en glidende lyd. Brug pil-op "
+"og pil-ned til at svare på disse."
+
+#: CMC_5way.py:142
+msgid ""
+"%i blocks left! Feel free to take a moment's break if you need to.\n"
+"\n"
+"Press %s to show the instructions for the next task."
+msgstr ""
+"%i blokke tilbage! Du er velkommen til at tage en kort pause, hvis du har "
+"brug for det.\n"
+"\n"
+"Tryk %s for at vise instruktionerne til den næste opgave."
+
+#: CMC_5way.py:143
+msgid ""
+"Welcome! In this experiment, you will be asked to respond to a particular "
+"aspect of an image or a sound. Let's get straight to it and practice how to "
+"do the task."
+msgstr ""
+"Velkommen! I dette eksperiment vil du blive bedt om at svare på et bestemt "
+"aspekt af et billede eller en lyd. Lad os komme i gang med at øve opgaven."
+
+#: CMC_5way.py:144
+msgid ""
+"Once in a while there's an odd trial. Let's practice that right now before "
+"we get to the main task.\n"
+"\n"
+"Press %(up)s if you see an upwards-pointing arrow or hear an upwards-sliding "
+"chirp. Press %(down)s if you see a downwards-arrow or hear a downwards-"
+"sliding chirp.\n"
+"\n"
+"You will now get the chance to practice this with some feedback to help you. "
+"Don't worry about the other figures and sounds for now. You will be "
+"instructed how to respond to those momentarily."
+msgstr ""
+"Ind imellem vil der komme en opgave, som er lidt anderledes end den primære "
+"opgave. Lad os øve den nu, før du bliver instrueret i den primære opgave.\n"
+"\n"
+"Tryk %(up)s hvis du ser en pil der peger opad eller hører en lyd der går "
+"opad (fra lav til høj). Tryk %(down)s hvis du ser en pil der peger nedad "
+"eller hører en lyd der går nedad (fra høj til lav).\n"
+"\n"
+"Du får nu muligheden for at øve denne opgave med feedback. Efterfølgende vil "
+"du blive instrueret i den primære opgave."
+
+#: CMC_5way.py:145
+msgid ""
+"You will now get to practice the \"real\" task. During practice, you will "
+"get feedback whether you responded correctly or not. For now, try to be as "
+"accurate as possible."
+msgstr ""
+"Du skal nu øve den \"rigtige\" opgave. Du vil få feedback på, om du svarede "
+"rigtigt eller forkert. Gør dit bedste for at svare korrekt."
+
+#: CMC_5way.py:146
+msgid ""
+"But you will occasionally be presented with an arrow or a chirp to which you "
+"will need to press %(up)s or %(down)s to indicate the direction."
+msgstr ""
+"Men du vil ind imellem få vist en pil eller en opadgående/nedadgående lyd, "
+"hvor du skal trykke %(up)s eller %(down)s, som du øvede i starten."
+
+#: CMC_5way.py:146
+msgid ""
+"Great! You are ready now. It is important that you respond as quickly as you "
+"possibly can without making errors.\n"
+"\n"
+"On most trials you will respond as just practiced using %(left)s and "
+"%(right)s."
+msgstr ""
+"Super! Du er klar nu. Det er vigtigt at du svarer så hurtigt du kan uden at "
+"lave fejl.\n"
+"\n"
+"Det meste af tiden skal du svare lige som du har øvet med %(left)s og "
+"%(right)s."
+
+#: CMC_5way.py:147
+msgid ""
+"You can take a small break if you need to. When you continue, the task will "
+"remain the same. Please make sure to respond as fast as possible without "
+"making errors."
+msgstr ""
+"Du kan tage en kort pause, hvis du har brug for det. Når du fortsætter, vil "
+"opgaven være det same. Husk at svare så hurtigt som muligt, men uden at lave "
+"fejl."
+
+#: CMC_5way.py:148
+msgid "The experiment has finished. Thank you! Press %s to finish."
+msgstr "Eksperimentet er færdigt nu. Tak! Tryk %s for at afslutte."
+
+#: CMC_5way.py:149
+msgid ""
+"In this block, you are going to see pairs of images which sometimes have "
+"accompanying sounds. There will be a pair of shapes on the left of the "
+"screen, and a pair of shapes on the right. All you need to do is decide "
+"which pairing feels correct to you. There will be a response bar at the "
+"bottom of the screen which ranges from strongly prefer the pairing on the "
+"left, to strongly prefer the pairing on the right, with no preference in the "
+"centre. If you feel the pair of images or images and sounds on the left of "
+"the screen is a better match, then indicate your preference to the left. If "
+"the pair of images or images and sounds on the right of the screen is a "
+"better match, then indicate your preference to the right. If you have no "
+"preference then choose that. Options between (slightly prefer and medium "
+"prefer) for either direction can also be made.  To make your choice, click "
+"on the response bar and a black triangle will appear there. If you want to "
+"change your selection, just click on a different point and the black "
+"triangle will move to there. To confirm your selection, click on the button "
+"on the bottom of the screen which lights up after making a choice."
+msgstr ""
+"I denne blok vil du se to figurpar, som nogle gange følges med nogle lyde. "
+"Der er et figurpar på venstre side af skærmen, og et figurpar på højre side. "
+"Du skal beslutte hvilke, hvilket af de to figurpar, der føles rigtigt for "
+"dig. Der er en svar-skala i bunden af skærmen, som går fra \"stærk præference"
+"\" for matchet til venstre til \"stærk præference\" for matchet til højre. "
+"Midten af skalaen betyder \"ingen præference\". Tryk på venstre side af "
+"skalaen, hvis du synes, at at figurparet til venstre passer bedst. Tryk på "
+"højre side af skalaen, hvis du synes, at figurparet til højre passer bedst. "
+"Hvis du ikke har nogen præference, så vælg det. Valgmulighederne midt "
+"imellem (svag præference og medium præference) kan også vælges i begge "
+"retninger. Foretag dit valg ved at klikke på skalaen. Hvis du vil justere "
+"dit valg, kan du bare trykke et andet sted på skalaen. Tryk på knappen i "
+"bunden af skærmen for at bekræfte dit valg."
+
+#: CMC_5way.py:150
+msgid ""
+"On trials which include sounds, you need to click on each of the shapes to "
+"hear the pairings before making a selection or before the response bar is "
+"shown. You can click on the shapes to hear the sounds as many times as you "
+"like.\n"
+"\n"
+"Please think about your choices, there is no time limit for this block and "
+"speed is not important. For this task, making sure you select your "
+"preference is all that matters."
+msgstr ""
+"Når opgaverne involverer lyde, bliver skalaen først vist når du har klikket "
+"med musen på alle figurerne, for at høre hvordan lydene er koblet til dem. "
+"Du kan klikke på figurerne så mange gange du har brug for, for at høre "
+"lydene.\n"
+"\n"
+"Tænk venligst grundigt over dine valg. Der er ikke nogen tidsbegrænsning og "
+"tid er ikke vigtigt. Lige nu er det kun vigtigt, at du gør dig umage for at "
+"vælge din præference."
+
+#: CMC_5way.py:151
+msgid ""
+"Which side best matches %s and %s? Click on the options bar at the bottom of "
+"the screen to indicate your preference, a black triangle will appear on your "
+"choice response and a central number in the centre of the bar. Click on the "
+"central number to confirm your choice."
+msgstr ""
+"Hvilken side matcher best %s og %s? Tryk med musen på skalaen i bunden af "
+"skærmen, for at svare hvad du foretrækker. Tryk på knappen nedenfor for at "
+"bekræfte dit valg."
+
+#: CMC_5way.py:152
+msgid ""
+"\n"
+"Use the mouse to click all the shapes and listen."
+msgstr ""
+"\n"
+"Klik på alle figurerne og lyt."
+
+#: CMC_5way.py:157
+msgid ""
+"SHAPE: There are two types of shape in this task. The %s button is used to "
+"indicate shapes with smooth protrusions, and the %s button to indicate "
+"shapes with pointy protrusions."
+msgstr ""
+"FORM: Der er to forme i denne opgave. Brug %s knappen til figurer med jævne "
+"former og %s knappen til figurer med spidse former."
+
+#: CMC_5way.py:158
+msgid ""
+"COMPLEXITY: There are two types of complexity in this task. The %s button is "
+"used to indicate shapes with four protrusions, and the %s button to indicate "
+"shapes with seven protrusions."
+msgstr ""
+"KOMPLEKSITET: Der er to typer af kompleksitet i denne opgave. Brug %s "
+"knappen til former med fire udspring og %s knappen til figurer med syv "
+"udspring."
+
+#: CMC_5way.py:159
+msgid ""
+"COLOUR: There are two types of colour in this task. The %s button is used to "
+"indicate shades of red and the %s button to indicate shades of blue."
+msgstr ""
+"FARVE: Der er to farver i denne opgave. Brug %s knappen til figurer med røde "
+"nuancer og %s knappen til figurer med blå nuancer."
+
+#: CMC_5way.py:160
+msgid ""
+"LIGHTNESS: There are two levels of lightness in this task. The %s button is "
+"used to indicate dark gray and the %s button to indicate light gray."
+msgstr ""
+"LYSHED: Der er to niveauer af lyshed i denne opgave. Brug %s knappen til "
+"mørkegrå figurer og %s knappen til lysegrå figurer."
+
+#: CMC_5way.py:161
+msgid ""
+"SOUND: There are two types of tone sound in this task. The %s button is used "
+"to indicate soft sounding tones and the %s button to indicate rough sounding "
+"tones."
+msgstr ""
+"KLANG: Der er to forskellige klange i denne opgave. Brug %s knappen til "
+"bløde klange og %s knappen til grove klange."
+
+#: CMC_5way.py:162
+msgid ""
+"TONE PITCH: There are two types of tone pitch in this task. The %s button is "
+"used to indicate the high pitch tones, and the %s button to indicate the low "
+"pitch tones."
+msgstr ""
+"TONEHØJDE: Der er to tonehøjder i denne opgave. Brug %s knappen til høje "
+"tonehøjder og %s knappen til dybere tonehøjder."
+
+#: CMC_5way.py:166
+msgid "pointy"
+msgstr "spids"
+
+#: CMC_5way.py:166
+msgid "smooth"
+msgstr "jævn"
+
+#: CMC_5way.py:167
+msgid "four protrusions"
+msgstr "fire udspring"
+
+#: CMC_5way.py:167
+msgid "seven protrusions"
+msgstr "syv udspring"
+
+#: CMC_5way.py:168
+msgid "blue"
+msgstr "blå"
+
+#: CMC_5way.py:168
+msgid "red"
+msgstr "rød"
+
+#: CMC_5way.py:169
+msgid "dark colour"
+msgstr "mørk farve"
+
+#: CMC_5way.py:169
+msgid "light colour"
+msgstr "lys farve"
+
+#: CMC_5way.py:170
+msgid "rough"
+msgstr "grov"
+
+#: CMC_5way.py:170
+msgid "soft"
+msgstr "blød"
+
+#: CMC_5way.py:171
+msgid "high"
+msgstr "høj"
+
+#: CMC_5way.py:171
+msgid "low"
+msgstr "dyb"
+
+#: CMC_5way.py:175
+msgid "shape"
+msgstr "form"
+
+#: CMC_5way.py:176
+msgid "complexity"
+msgstr "kompleksitet"
+
+#: CMC_5way.py:177
+msgid "colour"
+msgstr "farve"
+
+#: CMC_5way.py:178
+msgid "lightness"
+msgstr "lyshed"
+
+#: CMC_5way.py:179
+msgid "sound"
+msgstr "klang"
+
+#: CMC_5way.py:180
+msgid "tone pitch"
+msgstr "tonehøjde"
+
+#: CMC_5way.py:317
+msgid ""
+"I strongly\n"
+"prefer this match"
+msgstr ""
+"Stærk præference\n"
+"for dette match"
+
+#: CMC_5way.py:317
+msgid "No preference"
+msgstr "Ingen præference"
+
+#: CMC_5way.py:824
+msgid "Correct!"
+msgstr "Korrekt!"
+
+#: CMC_5way.py:824
+msgid "Wrong!"
+msgstr "Forkert!"
