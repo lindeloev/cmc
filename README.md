@@ -10,6 +10,7 @@ This experiment was run using [PsychoPy](http://psychopy.org/). The full experim
  * **data exp 2018.11 rate** is the ratings on the explicit dimension matching task.
  * **data exp 2018.11 test** is the implicit association test.
 
+## Analysis
 Run the **.R** files in sequential order starting with **CMC_1...** and on. Each step saves an output which can be used by later steps. The outputs that were used for the results in the paper is included in this repo. Note that the RT inference takes around 12 hours to run on a reasonably powerful 4-core i7 laptop.
 
 ## Pre-registration
